@@ -33,8 +33,7 @@ Monitored authentication logs to identify brute-force attempts.
 
 ### 📊 Dashboard: Security Overview
 Built a real-time dashboard tracking login attempts, network activity, and alerts.  
-**Screenshot:** See [`dashboards/`](dashboards/)
-
+**Screenshot:** *Screenshots coming soon*
 ---
 
 ## Investigation Methodology — BOTS v1 Web Attack
