@@ -1,0 +1,29 @@
+-- 1. Get the lay of the land
+index=botsv1 | stats count by sourcetype | sort - count
+
+-- 2. Find top IPs hitting the web server
+index=botsv1 sourcetype=iis | stats count by c_ip | sort - count
+
+-- 3. What pages was the suspect IP hitting
+index=botsv1 sourcetype=iis c_ip=40.80.148.42 | stats count by cs_uri_stem | sort - count
+
+-- 4. What did the server respond to that IP
+index=botsv1 sourcetype=iis c_ip=40.80.148.42 cs_uri_stem="/joomla/index.php/component/search/" | stats count by sc_status
+
+-- 5. Were those requests GET or POST
+index=botsv1 sourcetype=iis c_ip=40.80.148.42 cs_uri_stem="/joomla/index.php/component/search/" sc_status=200 | stats count by cs_method
+
+-- 6. Did the attacker get into the admin panel
+index=botsv1 sourcetype=iis c_ip=40.80.148.42 cs_uri_stem="/joomla/administrator/index.php" cs_method=POST sc_status=200
+
+-- 7. Pivot to network logs — what paths did attacker hit
+index=botsv1 sourcetype=stream:http dest_ip=192.168.250.70 src_ip=40.80.148.42 | stats count by uri_path | sort - count
+
+-- 8. Did the directory traversal succeed
+index=botsv1 sourcetype=stream:http dest_ip=192.168.250.70 src_ip=40.80.148.42 uri_path="/windows/win.ini" | stats count by status
+
+-- 9. What was the server sending back
+index=botsv1 sourcetype=stream:http dest_ip=192.168.250.70 src_ip=40.80.148.42 uri_path="/windows/win.ini" status=200 | table _time uri_path response_body
+
+-- 10. What was the attacker doing in the admin panel
+index=botsv1 sourcetype=stream:http dest_ip=192.168.250.70 src_ip=40.80.148.42 uri_path="/joomla/administrator/index.php" http_method=POST | table _time form_data
