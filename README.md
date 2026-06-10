@@ -35,7 +35,7 @@ Monitored authentication logs to identify brute-force attempts.
 
 Built a real-time dashboard tracking login attempts, network activity, and alerts.
 
-*Screenshot: Screenshots coming soon*
+*Screenshot:* Screenshots coming soon
 ---
 
 ## Investigation Methodology — BOTS v1 Web Attack
