@@ -66,6 +66,8 @@ index=botsv1 sourcetype=iis c_ip=40.80.148.42 cs_uri_stem="/joomla/index.php/com
 index=botsv1 sourcetype=iis c_ip=40.80.148.42 cs_uri_stem="/joomla/administrator/index.php" cs_method=POST sc_status=200
 ```
 
+Full 10-step investigation: [`searches/bots-phase1-web-attack.spl`](searches/bots-phase1-web-attack.spl)
+
 ## Certifications & Goals
 
 - [ ] CompTIA Security+ *(in progress)*
