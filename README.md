@@ -31,7 +31,7 @@ Monitored authentication logs to identify brute-force attempts.
 
 ---
 
-### 📊 Dashboard: Security Overview
+📊 Dashboard: Security Overview
 Built a real-time dashboard tracking login attempts, network activity, and alerts.  
 **Screenshot:** *Screenshots coming soon*
 ---
