@@ -8,7 +8,7 @@ A personal cybersecurity home lab focused on log ingestion, threat detection, an
 
 ## About
 
-IT professional with a background in RF/transmission systems and hands-on experience building detection and monitoring workflows in Splunk.  
+IT professional with a background in Cyber Defence and hands-on experience building detection and monitoring workflows in Splunk.  
 Currently pursuing CompTIA Security+ and transitioning into cybersecurity — specifically SOC analysis and cloud security roles.
 
 **Skills:** Splunk SPL · Log Analysis · Threat Detection · Network Fundamentals · Git
